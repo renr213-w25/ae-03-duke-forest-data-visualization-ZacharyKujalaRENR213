@@ -82,8 +82,18 @@ Once again, data visualization skills to the rescue!
 
 ```{r}
 #| label: price-area
+#| message: false
+#| warning: false
 
-# add code here
+ggplot(duke_forest, aes(x = price, y = area, color = year_built)) +
+  geom_point() +
+  geom_smooth(se = FALSE) +
+  labs(
+    x = "Price ($)",
+    y = "Area",
+    title = "House Prices and Areas by Year",
+    color = "Year Built"
+  )
 ```
 
 Add narrative here...
