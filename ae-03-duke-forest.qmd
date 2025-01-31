@@ -1,5 +1,9 @@
 ---
 title: "AE 03: Duke Forest + data visualization"
+author: Zachary Kujala
+editor: 
+  markdown: 
+    wrap: sentence
 ---
 
 ```{r}
@@ -8,6 +12,7 @@ title: "AE 03: Duke Forest + data visualization"
 
 library(tidyverse)
 library(openintro)
+library(dplyr)
 ```
 
 ## Exercise 1
@@ -37,7 +42,18 @@ duke_forest |>
 ```{r}
 #| label: price-garage
 
-# add code here
+duke_forest <- duke_forest |> 
+  mutate(garage = if_else(str_detect(parking, "Garage"), "Garage", "No garage"))
+
+ggplot(duke_forest, aes(x = price, fill = garage)) +
+  facet_wrap(~garage) +
+  geom_histogram(binwidth = 80000) +
+  labs(
+    x = "Price ($)",
+    y = "Number of Houses",
+    title = "Relationship between Garages and House Prices"
+  ) + 
+  theme(legend.position = "none")
 ```
 
 Add narrative here...
