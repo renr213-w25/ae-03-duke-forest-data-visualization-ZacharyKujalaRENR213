@@ -12,7 +12,6 @@ editor:
 
 library(tidyverse)
 library(openintro)
-library(dplyr)
 ```
 
 ## Exercise 1
@@ -56,7 +55,10 @@ ggplot(duke_forest, aes(x = price, fill = garage)) +
   theme(legend.position = "none")
 ```
 
-Add narrative here...
+The addition of a garage does not appear to have a significant impact on house price.
+The mode price of houses with and without garages are both approximately \$550,000.
+In fact, the highest priced house is one without a garage.
+Since both distributions are similar we cannot say if having a garage makes a difference on the price of houses.
 
 ::: callout-important
 Now is a good time to render, commit, and push.
@@ -96,7 +98,17 @@ ggplot(duke_forest, aes(x = price, y = area, color = year_built)) +
   )
 ```
 
-Add narrative here...
+**Claim 1:** Based on the plot some houses with larger areas are higher priced, seen by the top right data points and the positive curve.
+However there are many houses that have smaller areas yet are priced the same as ones with larger areas, as seen by the cluster of data points between the \$400,000 to \$800,000 price range.
+Also there are houses with larger areas that are cheap, seen by the highest data points in the \$0 to \$600,000 price range.
+
+**Claim 2:** Newer houses are not priced higher.
+Besides the outlier in the top right corner of the plot, all the newest houses have a price of about \$600,000 or less.
+The houses above this price are all older.
+
+**Claim 3:** Bigger and more expensive houses do not tend to be newer ones.
+The exception to this is the one outlier in the top right corner of the plot which does support the claim.
+The plot displays that newer houses are typically under \$600,000 and have smaller areas than many older houses.
 
 ::: callout-important
 Now is a good time to render, commit, and push.
